@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/ApiGateway/">
+    <Project Path="ApigateWay/ApiGateway/ApiGateway.csproj" />
+  </Folder>
+  <Folder Name="/Services/">
+    <Project Path="Services/Auth.API/Auth.API.csproj" />
+    <Project Path="Services/Booking.API/Booking.API.csproj" />
+    <Project Path="Services/Hotel.API/Hotel.API.csproj" />
+    <Project Path="Services/Notification.API/Notification.API.csproj" />
+    <Project Path="Services/Trip.API/Trip.API.csproj" />
+  </Folder>
+  <Folder Name="/Shared/">
+    <Project Path="Shared/Shared/Shared.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,21 @@
+Using launch settings from D:\_.DotNetProject\Backend\StayEasyNew\Services\Hotel.API\Properties\launchSettings.json...
+Building...
+You must install or update .NET to run this application.
+
+App: D:\_.DotNetProject\Backend\StayEasyNew\Services\Hotel.API\bin\Debug\net8.0\Hotel.API.exe
+Architecture: x64
+Framework: 'Microsoft.AspNetCore.App', version '8.0.0' (x64)
+.NET location: C:\Program Files\dotnet
+
+The following frameworks were found:
+  10.0.3 at [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App]
+
+The following frameworks for other architectures were found:
+  x86
+    10.0.3 at [C:\Program Files (x86)\dotnet\shared\Microsoft.AspNetCore.App]
+
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.AspNetCore.App&framework_version=8.0.0&arch=x64&rid=win-x64&os=win10

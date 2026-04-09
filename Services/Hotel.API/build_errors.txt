@@ -1,0 +1,11 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Hotel.API\Data\AppDbContext.cs(42,32): error CS1061: 'Rating' does not contain a definition for 'Hotel' and no accessible extension method 'Hotel' accepting a first argument of type 'Rating' could be found (are you missing a using directive or an assembly reference?) [D:\_.DotNetProject\Backend\StayEasyNew\Services\Hotel.API\Hotel.API.csproj]
+
+Build FAILED.
+
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Hotel.API\Data\AppDbContext.cs(42,32): error CS1061: 'Rating' does not contain a definition for 'Hotel' and no accessible extension method 'Hotel' accepting a first argument of type 'Rating' could be found (are you missing a using directive or an assembly reference?) [D:\_.DotNetProject\Backend\StayEasyNew\Services\Hotel.API\Hotel.API.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.95

@@ -1,0 +1,42 @@
+  Determining projects to restore...
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1903: Package 'Azure.Identity' 1.7.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-5mfx-4wcx-rv27
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'Azure.Identity' 1.7.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-m5vv-6r4h-3vj9
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'Azure.Identity' 1.7.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-wvxc-855f-jvrv
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1903: Package 'Microsoft.Data.SqlClient' 5.1.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-98g6-xh36-x2p7
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'Microsoft.IdentityModel.JsonWebTokens' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'System.IdentityModel.Tokens.Jwt' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52
+  All projects are up-to-date for restore.
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1903: Package 'Azure.Identity' 1.7.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-5mfx-4wcx-rv27
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'Azure.Identity' 1.7.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-m5vv-6r4h-3vj9
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'Azure.Identity' 1.7.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-wvxc-855f-jvrv
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1903: Package 'Microsoft.Data.SqlClient' 5.1.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-98g6-xh36-x2p7
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'Microsoft.IdentityModel.JsonWebTokens' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'System.IdentityModel.Tokens.Jwt' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52
+  Shared -> D:\_.DotNetProject\Backend\StayEasyNew\Shared\Shared\bin\Debug\net10.0\Shared.dll
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Domain\Repositories\IUserRepository.cs(8,14): error CS0246: The type or namespace name 'User' could not be found (are you missing a using directive or an assembly reference?) [D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj]
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Domain\Repositories\IUserRepository.cs(9,27): error CS0246: The type or namespace name 'User' could not be found (are you missing a using directive or an assembly reference?) [D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj]
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Infrastructure\Repositories\UserRepository.cs(18,27): error CS0246: The type or namespace name 'User' could not be found (are you missing a using directive or an assembly reference?) [D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj]
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Infrastructure\Repositories\UserRepository.cs(23,40): error CS0246: The type or namespace name 'User' could not be found (are you missing a using directive or an assembly reference?) [D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj]
+
+Build FAILED.
+
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1903: Package 'Azure.Identity' 1.7.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-5mfx-4wcx-rv27
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'Azure.Identity' 1.7.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-m5vv-6r4h-3vj9
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'Azure.Identity' 1.7.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-wvxc-855f-jvrv
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1903: Package 'Microsoft.Data.SqlClient' 5.1.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-98g6-xh36-x2p7
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'Microsoft.IdentityModel.JsonWebTokens' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'System.IdentityModel.Tokens.Jwt' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1903: Package 'Azure.Identity' 1.7.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-5mfx-4wcx-rv27
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'Azure.Identity' 1.7.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-m5vv-6r4h-3vj9
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'Azure.Identity' 1.7.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-wvxc-855f-jvrv
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1903: Package 'Microsoft.Data.SqlClient' 5.1.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-98g6-xh36-x2p7
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'Microsoft.IdentityModel.JsonWebTokens' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj : warning NU1902: Package 'System.IdentityModel.Tokens.Jwt' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Domain\Repositories\IUserRepository.cs(8,14): error CS0246: The type or namespace name 'User' could not be found (are you missing a using directive or an assembly reference?) [D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj]
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Domain\Repositories\IUserRepository.cs(9,27): error CS0246: The type or namespace name 'User' could not be found (are you missing a using directive or an assembly reference?) [D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj]
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Infrastructure\Repositories\UserRepository.cs(18,27): error CS0246: The type or namespace name 'User' could not be found (are you missing a using directive or an assembly reference?) [D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj]
+D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Infrastructure\Repositories\UserRepository.cs(23,40): error CS0246: The type or namespace name 'User' could not be found (are you missing a using directive or an assembly reference?) [D:\_.DotNetProject\Backend\StayEasyNew\Services\Auth.API\Auth.API.csproj]
+    12 Warning(s)
+    4 Error(s)
+
+Time Elapsed 00:00:01.07

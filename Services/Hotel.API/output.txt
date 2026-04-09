@@ -1,0 +1,282 @@
+info : X.509 certificate chain validation will use the default trust store selected by .NET for code signing.
+info : X.509 certificate chain validation will use the default trust store selected by .NET for timestamping.
+info : Adding PackageReference for package 'Microsoft.EntityFrameworkCore.SqlServer' into project 'D:\_.DotNetProject\Backend\StayEasyNew\Services\Hotel.API\Hotel.API.csproj'.
+info : Restoring packages for D:\_.DotNetProject\Backend\StayEasyNew\Services\Hotel.API\Hotel.API.csproj...
+info :   CACHE https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.sqlserver/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.sqlserver/8.0.4/microsoft.entityframeworkcore.sqlserver.8.0.4.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.sqlserver/8.0.4/microsoft.entityframeworkcore.sqlserver.8.0.4.nupkg 796ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.relational/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.data.sqlclient/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.relational/index.json 353ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.relational/8.0.4/microsoft.entityframeworkcore.relational.8.0.4.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.relational/8.0.4/microsoft.entityframeworkcore.relational.8.0.4.nupkg 176ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.data.sqlclient/index.json 574ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.data.sqlclient/5.1.5/microsoft.data.sqlclient.5.1.5.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.data.sqlclient/5.1.5/microsoft.data.sqlclient.5.1.5.nupkg 147ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.abstractions/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.abstractions/index.json 456ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore/index.json 919ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore/8.0.4/microsoft.entityframeworkcore.8.0.4.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg 648ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore/8.0.4/microsoft.entityframeworkcore.8.0.4.nupkg 634ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.data.sqlclient.sni.runtime/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/azure.identity/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identity.client/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.protocols.openidconnect/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.jsonwebtokens/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.configuration.configurationmanager/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.diagnostics.diagnosticsource/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.runtime.caching/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.text.encoding.codepages/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.text.encodings.web/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.security.cryptography.cng/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.security.principal.windows/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.abstractions/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.analyzers/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.caching.memory/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.primitives/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.data.sqlclient.sni.runtime/index.json 404ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identity.client/index.json 395ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.data.sqlclient.sni.runtime/5.1.1/microsoft.data.sqlclient.sni.runtime.5.1.1.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identity.client/4.56.0/microsoft.identity.client.4.56.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/azure.identity/index.json 461ms
+info :   GET https://api.nuget.org/v3-flatcontainer/azure.identity/1.10.3/azure.identity.1.10.3.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/azure.identity/1.10.3/azure.identity.1.10.3.nupkg 123ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identity.client/4.56.0/microsoft.identity.client.4.56.0.nupkg 229ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.data.sqlclient.sni.runtime/5.1.1/microsoft.data.sqlclient.sni.runtime.5.1.1.nupkg 236ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.jsonwebtokens/index.json 805ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.diagnostics.diagnosticsource/index.json 795ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.jsonwebtokens/6.35.0/microsoft.identitymodel.jsonwebtokens.6.35.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/system.diagnostics.diagnosticsource/6.0.1/system.diagnostics.diagnosticsource.6.0.1.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/system.configuration.configurationmanager/index.json 885ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.protocols.openidconnect/index.json 897ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.text.encoding.codepages/index.json 884ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.security.cryptography.cng/index.json 883ms
+info :   GET https://api.nuget.org/v3-flatcontainer/system.configuration.configurationmanager/6.0.1/system.configuration.configurationmanager.6.0.1.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.protocols.openidconnect/6.35.0/microsoft.identitymodel.protocols.openidconnect.6.35.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging/index.json 906ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.caching.memory/index.json 907ms
+info :   GET https://api.nuget.org/v3-flatcontainer/system.security.cryptography.cng/5.0.0/system.security.cryptography.cng.5.0.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/system.text.encoding.codepages/6.0.0/system.text.encoding.codepages.6.0.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging/8.0.0/microsoft.extensions.logging.8.0.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.caching.memory/8.0.0/microsoft.extensions.caching.memory.8.0.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.analyzers/index.json 978ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.security.principal.windows/index.json 987ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.primitives/index.json 1013ms
+info :   GET https://api.nuget.org/v3-flatcontainer/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.analyzers/8.0.4/microsoft.entityframeworkcore.analyzers.8.0.4.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.abstractions/index.json 1044ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.abstractions/8.0.4/microsoft.entityframeworkcore.abstractions.8.0.4.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/system.text.encodings.web/index.json 1059ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.runtime.caching/index.json 1060ms
+info :   GET https://api.nuget.org/v3-flatcontainer/system.runtime.caching/6.0.0/system.runtime.caching.6.0.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/system.text.encodings.web/6.0.0/system.text.encodings.web.6.0.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/system.diagnostics.diagnosticsource/6.0.1/system.diagnostics.diagnosticsource.6.0.1.nupkg 474ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.jsonwebtokens/6.35.0/microsoft.identitymodel.jsonwebtokens.6.35.0.nupkg 477ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging/8.0.0/microsoft.extensions.logging.8.0.0.nupkg 597ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.text.encoding.codepages/6.0.0/system.text.encoding.codepages.6.0.0.nupkg 653ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.security.cryptography.cng/5.0.0/system.security.cryptography.cng.5.0.0.nupkg 653ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.configuration.configurationmanager/6.0.1/system.configuration.configurationmanager.6.0.1.nupkg 816ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.protocols.openidconnect/6.35.0/microsoft.identitymodel.protocols.openidconnect.6.35.0.nupkg 816ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.caching.memory/8.0.0/microsoft.extensions.caching.memory.8.0.0.nupkg 1053ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg 1029ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.analyzers/8.0.4/microsoft.entityframeworkcore.analyzers.8.0.4.nupkg 1099ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg 1158ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.entityframeworkcore.abstractions/8.0.4/microsoft.entityframeworkcore.abstractions.8.0.4.nupkg 1134ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.text.encodings.web/6.0.0/system.text.encodings.web.6.0.0.nupkg 2185ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.runtime.caching/6.0.0/system.runtime.caching.6.0.0.nupkg 2250ms
+info :   GET https://api.nuget.org/v3-flatcontainer/azure.core/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identity.client.extensions.msal/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.memory/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.security.cryptography.protecteddata/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.text.json/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.threading.tasks.extensions/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/azure.core/index.json 483ms
+info :   GET https://api.nuget.org/v3-flatcontainer/azure.core/1.35.0/azure.core.1.35.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/system.text.json/index.json 516ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identity.client.extensions.msal/index.json 527ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.memory/index.json 527ms
+info :   GET https://api.nuget.org/v3-flatcontainer/system.text.json/4.7.2/system.text.json.4.7.2.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/system.memory/4.5.4/system.memory.4.5.4.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identity.client.extensions.msal/4.56.0/microsoft.identity.client.extensions.msal.4.56.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/system.security.cryptography.protecteddata/index.json 536ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.threading.tasks.extensions/index.json 535ms
+info :   GET https://api.nuget.org/v3-flatcontainer/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/system.security.cryptography.protecteddata/4.7.0/system.security.cryptography.protecteddata.4.7.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/azure.core/1.35.0/azure.core.1.35.0.nupkg 270ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identity.client.extensions.msal/4.56.0/microsoft.identity.client.extensions.msal.4.56.0.nupkg 232ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.memory/4.5.4/system.memory.4.5.4.nupkg 233ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.security.cryptography.protecteddata/4.7.0/system.security.cryptography.protecteddata.4.7.0.nupkg 233ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.text.json/4.7.2/system.text.json.4.7.2.nupkg 256ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg 239ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.abstractions/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.protocols/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.identitymodel.tokens.jwt/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.tokens/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.text.encoding/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.text.encodings.web/4.7.2/system.text.encodings.web.4.7.2.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/system.runtime.compilerservices.unsafe/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.security.cryptography.protecteddata/6.0.0/system.security.cryptography.protecteddata.6.0.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/system.configuration.configurationmanager/6.0.0/system.configuration.configurationmanager.6.0.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.formats.asn1/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.caching.abstractions/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.options/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.numerics.vectors/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.memory.data/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.io.filesystem.accesscontrol/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.bcl.asyncinterfaces/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/system.configuration.configurationmanager/6.0.0/system.configuration.configurationmanager.6.0.0.nupkg 169ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.security.cryptography.protecteddata/6.0.0/system.security.cryptography.protecteddata.6.0.0.nupkg 219ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.text.encodings.web/4.7.2/system.text.encodings.web.4.7.2.nupkg 297ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.io.filesystem.accesscontrol/index.json 450ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.formats.asn1/index.json 451ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.protocols/index.json 457ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.tokens/index.json 455ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.protocols/6.35.0/microsoft.identitymodel.protocols.6.35.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/system.io.filesystem.accesscontrol/5.0.0/system.io.filesystem.accesscontrol.5.0.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/system.formats.asn1/5.0.0/system.formats.asn1.5.0.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.tokens/6.35.0/microsoft.identitymodel.tokens.6.35.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/system.numerics.vectors/index.json 472ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/index.json 473ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection/index.json 473ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/system.runtime.compilerservices.unsafe/index.json 502ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.memory.data/index.json 500ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.identitymodel.tokens.jwt/index.json 507ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.abstractions/index.json 509ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.text.encoding/index.json 506ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.options/index.json 503ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.caching.abstractions/index.json 504ms
+info :   GET https://api.nuget.org/v3-flatcontainer/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/system.memory.data/1.0.2/system.memory.data.1.0.2.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.abstractions/6.22.0/microsoft.identitymodel.abstractions.6.22.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/system.identitymodel.tokens.jwt/6.35.0/system.identitymodel.tokens.jwt.6.35.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/index.json 546ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.caching.abstractions/8.0.0/microsoft.extensions.caching.abstractions.8.0.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.protocols/6.35.0/microsoft.identitymodel.protocols.6.35.0.nupkg 366ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.tokens/6.35.0/microsoft.identitymodel.tokens.6.35.0.nupkg 457ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.io.filesystem.accesscontrol/5.0.0/system.io.filesystem.accesscontrol.5.0.0.nupkg 457ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg 611ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg 637ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg 704ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.identitymodel.tokens.jwt/6.35.0/system.identitymodel.tokens.jwt.6.35.0.nupkg 679ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.abstractions/6.22.0/microsoft.identitymodel.abstractions.6.22.0.nupkg 720ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg 765ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg 937ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg 929ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.bcl.asyncinterfaces/index.json 1847ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/system.formats.asn1/5.0.0/system.formats.asn1.5.0.0.nupkg 1521ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.memory.data/1.0.2/system.memory.data.1.0.2.nupkg 1912ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg 1987ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg 860ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.extensions.caching.abstractions/8.0.0/microsoft.extensions.caching.abstractions.8.0.0.nupkg 2813ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.logging/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.logging/index.json 453ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.logging/6.35.0/microsoft.identitymodel.logging.6.35.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.identitymodel.logging/6.35.0/microsoft.identitymodel.logging.6.35.0.nupkg 131ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.csharp/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.netcore.targets/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.netcore.platforms/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.runtime/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/system.text.json/4.6.0/system.text.json.4.6.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/system.security.accesscontrol/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/system.text.json/4.6.0/system.text.json.4.6.0.nupkg 214ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg 265ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.netcore.platforms/index.json 448ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.csharp/index.json 485ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.netcore.targets/index.json 484ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/system.runtime/index.json 502ms
+info :   GET https://api.nuget.org/v3-flatcontainer/system.runtime/4.3.0/system.runtime.4.3.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg 221ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg 296ms
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg 336ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.runtime/4.3.0/system.runtime.4.3.0.nupkg 802ms
+info :   OK https://api.nuget.org/v3-flatcontainer/system.security.accesscontrol/index.json 3413ms
+info :   GET https://api.nuget.org/v3-flatcontainer/system.security.accesscontrol/5.0.0/system.security.accesscontrol.5.0.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/system.security.accesscontrol/5.0.0/system.security.accesscontrol.5.0.0.nupkg 240ms
+info : Installed Microsoft.EntityFrameworkCore.Abstractions 8.0.4 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.entityframeworkcore.abstractions\8.0.4 with content hash S50pjtPNOvRktacaO6UAhvGCPMT56wxqEq8fQfcjaSUySPGba6mKWo6ackw6DdeAR1cA6U+U0uj27warA2KtJA==.
+info : Installed Microsoft.EntityFrameworkCore.Analyzers 8.0.4 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.entityframeworkcore.analyzers\8.0.4 with content hash P8hfMZECdbgle4Us8HGRUKAjqVwgbtr5JqtCxqEoiVORrNQAmcpu3g1NKwTAoUsO9Z0QRgExtYoAmdggR/DkMQ==.
+info : Installed Microsoft.IdentityModel.JsonWebTokens 6.35.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.identitymodel.jsonwebtokens\6.35.0 with content hash 9wxai3hKgZUb4/NjdRKfQd0QJvtXKDlvmGMYACbEC8DFaicMFCFhQFZq9ZET1kJLwZahf2lfY5Gtcpsx8zYzbg==.
+info : Installed Microsoft.Extensions.Caching.Memory 8.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.extensions.caching.memory\8.0.0 with content hash 7pqivmrZDzo1ADPkRwjy+8jtRKWRCPag9qPI+p7sgu7Q4QreWhcvbiWXsbhP+yY8XSiDvZpu2/LWdBv7PnmOpQ==.
+info : Installed Azure.Core 1.35.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\azure.core\1.35.0 with content hash hENcx03Jyuqv05F4RBEPbxz29UrM3Nbhnr6Wl6NQpoU9BCIbL3XLentrxDCTrH54NLS11Exxi/o8MYgT/cnKFA==.
+info : Installed Microsoft.IdentityModel.Protocols.OpenIdConnect 6.35.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.identitymodel.protocols.openidconnect\6.35.0 with content hash LMtVqnECCCdSmyFoCOxIE5tXQqkOLrvGrL7OxHg41DIm1bpWtaCdGyVcTAfOQpJXvzND9zUKIN/lhngPkYR8vg==.
+info : Installed Microsoft.IdentityModel.Tokens 6.35.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.identitymodel.tokens\6.35.0 with content hash RN7lvp7s3Boucg1NaNAbqDbxtlLj5Qeb+4uSS1TeK5FSBVM40P4DKaTKChT43sHyKfh7V0zkrMph6DdHvyA4bg==.
+info : Installed Microsoft.EntityFrameworkCore.SqlServer 8.0.4 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.entityframeworkcore.sqlserver\8.0.4 with content hash /IlHNxzZGqiuVi+FPtjFZgAOfY989fTPtxw8zhmlFwv5M2WJzBSMlAP4jNVQX/k7/qu+y1YvddPxg4O5QdeRXw==.
+info : Installed Microsoft.EntityFrameworkCore 8.0.4 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.entityframeworkcore\8.0.4 with content hash /kyu9pXuxQvhg8RO/oN5Q5Og7cDIVvZtrt1z48rX7Yido+zEGkUkp3/Bjd9u45N2uuPPF8mn2pKDlAewCvv3/Q==.
+info : Installed Microsoft.Extensions.Configuration.Abstractions 8.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.extensions.configuration.abstractions\8.0.0 with content hash 3lE/iLSutpgX1CC0NOW70FJoGARRHbyKmG7dc0klnUZ9Dd9hS6N/POPWhKhMLCEuNN5nXEY5agmlFtH562vqhQ==.
+info : Installed Microsoft.Extensions.Caching.Abstractions 8.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.extensions.caching.abstractions\8.0.0 with content hash 3KuSxeHoNYdxVYfg2IRZCThcrlJ1XJqIXkAWikCsbm5C/bCjv7G0WoKDyuR98Q+T607QT2Zl5GsbGRkENcV2yQ==.
+info : Installed Microsoft.Data.SqlClient.SNI.runtime 5.1.1 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.data.sqlclient.sni.runtime\5.1.1 with content hash wNGM5ZTQCa2blc9ikXQouybGiyMd6IHPVJvAlBEPtr6JepZEOYeDxGyprYvFVeOxlCXs7avridZQ0nYkHzQWCQ==.
+info : Installed System.Diagnostics.DiagnosticSource 6.0.1 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.diagnostics.diagnosticsource\6.0.1 with content hash KiLYDu2k2J82Q9BJpWiuQqCkFjRBWVq4jDzKKWawVi9KWzyD0XG3cmfX0vqTQlL14Wi9EufJrbL0+KCLTbqWiQ==.
+info : Installed Microsoft.Identity.Client.Extensions.Msal 4.56.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.identity.client.extensions.msal\4.56.0 with content hash H12YAzEGK55vZ+QpxUzozhW8ZZtgPDuWvgA0JbdIR9UhMUplj29JhIgE2imuH8W2Nw9D8JKygR1uxRFtpSNcrg==.
+info : Installed System.Windows.Extensions 6.0.0 from C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\ to C:\Users\ASUS\.nuget\packages\system.windows.extensions\6.0.0 with content hash IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==.
+info : Installed System.Text.Encodings.Web 4.7.2 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.text.encodings.web\4.7.2 with content hash iTUgB/WtrZ1sWZs84F2hwyQhiRH6QNjQv2DkwrH+WP6RoFga2Q1m3f9/Q7FG8cck8AdHitQkmkXSY8qylcDmuA==.
+info : Installed System.Security.Permissions 6.0.0 from C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\ to C:\Users\ASUS\.nuget\packages\system.security.permissions\6.0.0 with content hash T/uuc7AklkDoxmcJ7LGkyX1CcSviZuLCa4jg3PekfJ7SU0niF0IVTXwUiNVP9DSpzou2PpxJ+eNY2IfDM90ZCg==.
+info : Installed System.Configuration.ConfigurationManager 6.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.configuration.configurationmanager\6.0.0 with content hash 7T+m0kDSlIPTHIkPMIu6m6tV6qsMqJpvQWW2jIc2qi7sn40qxFo0q+7mEQAhMPXZHMKnWrnv47ntGlM/ejvw3g==.
+info : Installed System.Drawing.Common 6.0.0 from C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\ to C:\Users\ASUS\.nuget\packages\system.drawing.common\6.0.0 with content hash NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==.
+info : Installed Azure.Identity 1.10.3 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\azure.identity\1.10.3 with content hash l1Xm2MWOF2Mzcwuarlw8kWQXLZk3UeB55aQXVyjj23aBfDwOZ3gu5GP2kJ6KlmZeZv2TCzw7x4L3V36iNr3gww==.
+info : Installed System.Security.Cryptography.ProtectedData 6.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.security.cryptography.protecteddata\6.0.0 with content hash rp1gMNEZpvx9vP0JW0oHLxlf8oSiQgtno77Y4PLUBjSiDYoD77Y8uXHr1Ea5XG4/pIKhqAdxZ8v8OTUtqo9PeQ==.
+info : Installed Microsoft.Extensions.Logging 8.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.extensions.logging\8.0.0 with content hash tvRkov9tAJ3xP51LCv3FJ2zINmv1P8Hi8lhhtcKGqM+ImiTCC84uOPEI4z8Cdq2C3o9e+Aa0Gw0rmrsJD77W+w==.
+info : Installed Microsoft.IdentityModel.Protocols 6.35.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.identitymodel.protocols\6.35.0 with content hash BPQhlDzdFvv1PzaUxNSk+VEPwezlDEVADIKmyxubw7IiELK18uJ06RQ9QKKkds30XI+gDu9n8j24XQ8w7fjWcg==.
+info : Installed System.Text.Encodings.Web 6.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.text.encodings.web\6.0.0 with content hash Vg8eB5Tawm1IFqj4TVK1czJX89rhFxJo9ELqc/Eiq0eXy13RK00eubyU6TJE6y+GQXjyV5gSfiewDUZjQgSE0w==.
+info : Installed Microsoft.NETCore.Targets 1.1.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.netcore.targets\1.1.0 with content hash aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==.
+info : Installed Microsoft.NETCore.Platforms 1.1.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.netcore.platforms\1.1.0 with content hash kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==.
+info : Installed System.Configuration.ConfigurationManager 6.0.1 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.configuration.configurationmanager\6.0.1 with content hash jXw9MlUu/kRfEU0WyTptAVueupqIeE3/rl0EZDMlf8pcvJnitQ8HeVEp69rZdaStXwTV72boi/Bhw8lOeO+U2w==.
+info : Installed Microsoft.Identity.Client 4.56.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.identity.client\4.56.0 with content hash rr4zbidvHy9r4NvOAs5hdd964Ao2A0pAeFBJKR95u1CJAVzbd1p6tPTXUZ+5ld0cfThiVSGvz6UHwY6JjraTpA==.
+info : Installed Microsoft.Extensions.Options 8.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.extensions.options\8.0.0 with content hash JOVOfqpnqlVLUzINQ2fox8evY2SKLYJ3BV8QDe/Jyp21u1T7r45x/R/5QdteURMR5r01GxeJSBBUOCOyaNXA3g==.
+info : Installed Microsoft.EntityFrameworkCore.Relational 8.0.4 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.entityframeworkcore.relational\8.0.4 with content hash aWLT6e9a8oMzXgF0YQpYYa3mDeU+yb2UQSQ+RrIgyGgSpzPfSKgpA7v2kOVDuZr2AQ6NNAlWPaBG7wZuKQI96w==.
+info : Installed System.Security.AccessControl 6.0.0 from C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\ to C:\Users\ASUS\.nuget\packages\system.security.accesscontrol\6.0.0 with content hash AUADIc0LIEQe7MzC+I0cl0rAT8RrTAKFHl53yHjEUzNVIaUlhFY11vc2ebiVJzVBuOzun6F7FBA+8KAbGTTedQ==.
+info : Installed System.Security.Principal.Windows 5.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.security.principal.windows\5.0.0 with content hash t0MGLukB5WAVU9bO3MGzvlGnyJPgUlcwerXn1kzBRjwLKixT96XV0Uza41W49gVd8zEMFu9vQEFlv0IOrytICA==.
+info : Installed System.Security.Cryptography.Cng 4.5.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.security.cryptography.cng\4.5.0 with content hash WG3r7EyjUe9CMPFSs6bty5doUqT+q9pbI80hlNzo2SkPkZ4VTuZkGWjpp77JB8+uaL4DFPRdBsAY+DX3dBK92A==.
+info : Installed System.Text.Encoding 4.3.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.text.encoding\4.3.0 with content hash BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==.
+info : Installed Microsoft.IdentityModel.Abstractions 6.22.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.identitymodel.abstractions\6.22.0 with content hash iI+9V+2ciCrbheeLjpmjcqCnhy+r6yCoEcid3nkoFWerHgjVuT6CPM4HODUTtUPe1uwks4wcnAujJ8u+IKogHQ==.
+info : Installed Microsoft.Extensions.DependencyInjection 8.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.extensions.dependencyinjection\8.0.0 with content hash V8S3bsm50ig6JSyrbcJJ8bW2b9QLGouz+G1miK3UTaOWmMtFwNNNzUf4AleyDWUmTrWMLNnFSLEQtxmxgNQnNQ==.
+info : Installed System.Numerics.Vectors 4.5.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.numerics.vectors\4.5.0 with content hash QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==.
+info : Installed System.IdentityModel.Tokens.Jwt 6.35.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.identitymodel.tokens.jwt\6.35.0 with content hash yxGIQd3BFK7F6S62/7RdZk3C/mfwyVxvh6ngd1VYMBmbJ1YZZA9+Ku6suylVtso0FjI0wbElpJ0d27CdsyLpBQ==.
+info : Installed System.IO.FileSystem.AccessControl 5.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.io.filesystem.accesscontrol\5.0.0 with content hash SxHB3nuNrpptVk+vZ/F+7OHEpoHUIKKMl02bUmYHQr1r+glbZQxs7pRtsf4ENO29TVm2TH3AEeep2fJcy92oYw==.
+info : Installed Microsoft.Extensions.Logging.Abstractions 8.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.extensions.logging.abstractions\8.0.0 with content hash arDBqTgFCyS0EvRV7O3MZturChstm50OJ0y9bDJvAcmEPJm0FFpFyjU/JLYyStNGGey081DvnQYlncNX5SJJGA==.
+info : Installed System.Text.Json 4.6.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.text.json\4.6.0 with content hash 4F8Xe+JIkVoDJ8hDAZ7HqLkjctN/6WItJIzQaifBwClC7wmoLSda/Sv2i6i1kycqDb3hWF4JCVbpAweyOKHEUA==.
+info : Installed Microsoft.IdentityModel.Logging 6.35.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.identitymodel.logging\6.35.0 with content hash jePrSfGAmqT81JDCNSY+fxVWoGuJKt9e6eJ+vT7+quVS55nWl//jGjUQn4eFtVKt4rt5dXaleZdHRB9J9AJZ7Q==.
+info : Installed Microsoft.CSharp 4.5.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.csharp\4.5.0 with content hash kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==.
+info : Installed System.Memory.Data 1.0.2 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.memory.data\1.0.2 with content hash JGkzeqgBsiZwKJZ1IxPNsDFZDhUvuEdX8L8BDC8N3KOj+6zMcNU28CNN59TpZE/VJYy9cP+5M+sbxtWJx3/xtw==.
+info : Installed System.Runtime.Caching 6.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.runtime.caching\6.0.0 with content hash E0e03kUp5X2k+UAoVl6efmI7uU7JRBWi5EIdlQ7cr0NpBGjHG4fWII35PgsBY9T4fJQ8E4QPsL0rKksU9gcL5A==.
+info : Installed Microsoft.Win32.SystemEvents 6.0.0 from C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\ to C:\Users\ASUS\.nuget\packages\microsoft.win32.systemevents\6.0.0 with content hash hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==.
+info : Installed System.Security.Cryptography.ProtectedData 4.7.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.security.cryptography.protecteddata\4.7.0 with content hash ehYW0m9ptxpGWvE4zgqongBVWpSDU/JCFD4K7krxkQwSz/sFQjEXCUqpvencjy6DYDbn7Ig09R8GFffu8TtneQ==.
+info : Installed Microsoft.Bcl.AsyncInterfaces 1.1.1 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.bcl.asyncinterfaces\1.1.1 with content hash yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==.
+info : Installed System.Runtime.CompilerServices.Unsafe 6.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.runtime.compilerservices.unsafe\6.0.0 with content hash /iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==.
+info : Installed System.Text.Encoding.CodePages 6.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.text.encoding.codepages\6.0.0 with content hash ZFCILZuOvtKPauZ/j/swhvw68ZRi9ATCfvGbk1QfydmcXBkIWecWKn/250UH7rahZ5OoDBaiAudJtPvLwzw85A==.
+info : Installed Microsoft.Extensions.Primitives 8.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.extensions.primitives\8.0.0 with content hash bXJEZrW9ny8vjMF1JV253WeLhpEVzFo1lyaZu1vQ4ZxWUlVvknZ/+ftFgVheLubb4eZPSwwxBeqS1JkCOjxd8g==.
+info : Installed Microsoft.Extensions.DependencyInjection.Abstractions 8.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\8.0.0 with content hash cjWrLkJXK0rs4zofsK4bSdg+jhDLTaxrkXu4gS6Y7MAlCvRyNNgwY/lJi5RDlQOnSZweHqoyvgvbdvQsRIW+hg==.
+info : Installed System.Runtime 4.3.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.runtime\4.3.0 with content hash JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==.
+info : Installed Microsoft.Data.SqlClient 5.1.5 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\microsoft.data.sqlclient\5.1.5 with content hash 6kvhQjY5uBCdBccezFD2smfnpQjQ33cZtUZVrNvxlwoBu6uopM5INH6uSgLI7JRLtlQ3bMPwnhMq4kchsXeZ5w==.
+info : Installed System.Text.Json 4.7.2 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.text.json\4.7.2 with content hash TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==.
+info : Installed System.Memory 4.5.4 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.memory\4.5.4 with content hash 1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==.
+info : Installed System.Formats.Asn1 5.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.formats.asn1\5.0.0 with content hash MTvUIktmemNB+El0Fgw9egyqT9AYSIk6DTJeoDSpc3GIHxHCMo8COqkWT1mptX5tZ1SlQ6HJZ0OsSvMth1c12w==.
+info : Installed System.Threading.Tasks.Extensions 4.5.4 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.threading.tasks.extensions\4.5.4 with content hash zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==.
+info : Installed System.Security.AccessControl 5.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.security.accesscontrol\5.0.0 with content hash dagJ1mHZO3Ani8GH0PHpPEe/oYO+rVdbQjvjJkBRNQkX4t0r1iaeGn8+/ybkSLEan3/slM0t59SVdHzuHf2jmw==.
+info : Installed System.Security.Cryptography.Cng 5.0.0 from https://api.nuget.org/v3/index.json to C:\Users\ASUS\.nuget\packages\system.security.cryptography.cng\5.0.0 with content hash jIMXsKn94T9JY7PvPq/tMfqa6GAaHpElRDpmG+SuL+D3+sTw2M8VhnibKnN8Tq+4JqbPJ/f+BwtLeDMEnzAvRg==.
+info :   CACHE https://api.nuget.org/v3/vulnerabilities/index.json
+info :   CACHE https://api.nuget.org/v3-vulnerabilities/2026.03.26.23.55.39/vulnerability.base.json
+info :   CACHE https://api.nuget.org/v3-vulnerabilities/2026.03.26.23.55.39/2026.03.27.05.55.40/vulnerability.update.json
+info : Package 'Microsoft.EntityFrameworkCore.SqlServer' is compatible with all the specified frameworks in project 'D:\_.DotNetProject\Backend\StayEasyNew\Services\Hotel.API\Hotel.API.csproj'.
+info : PackageReference for package 'Microsoft.EntityFrameworkCore.SqlServer' version '8.0.4' added to file 'D:\_.DotNetProject\Backend\StayEasyNew\Services\Hotel.API\Hotel.API.csproj'.
+info : Generating MSBuild file D:\_.DotNetProject\Backend\StayEasyNew\Services\Hotel.API\obj\Hotel.API.csproj.nuget.g.props.
+info : Generating MSBuild file D:\_.DotNetProject\Backend\StayEasyNew\Services\Hotel.API\obj\Hotel.API.csproj.nuget.g.targets.
+info : Writing assets file to disk. Path: D:\_.DotNetProject\Backend\StayEasyNew\Services\Hotel.API\obj\project.assets.json
+log  : Restored D:\_.DotNetProject\Backend\StayEasyNew\Services\Hotel.API\Hotel.API.csproj (in 1.69 min).
