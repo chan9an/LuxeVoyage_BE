@@ -49,3 +49,5 @@ csx/
 
 # Others
 /StayEasyNew.slnLaunch.user
+.env
+*.env

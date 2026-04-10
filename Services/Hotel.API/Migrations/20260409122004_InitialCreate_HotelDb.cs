@@ -22,8 +22,9 @@ namespace Hotel.API.Migrations
                     Currency = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Type = table.Column<int>(type: "int", nullable: false),
-                    Rating = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Rating = table.Column<decimal>(type: "decimal(3,2)", nullable: false),
                     ReviewCount = table.Column<int>(type: "int", nullable: false),
+                    ManagerId = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
                     Amenities = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>

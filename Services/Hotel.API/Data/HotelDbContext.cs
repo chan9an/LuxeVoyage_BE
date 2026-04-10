@@ -41,7 +41,13 @@ namespace Hotel.API.Data
                 entity.Property(e => e.Name).IsRequired().HasMaxLength(150);
                 entity.Property(e => e.Location).HasMaxLength(200);
                 entity.Property(e => e.PricePerNight).HasColumnType("decimal(18,2)");
-                
+                entity.Property(e => e.Rating).HasColumnType("decimal(3,2)");
+                entity.Property(e => e.ManagerId).HasMaxLength(450);
+            });
+
+            modelBuilder.Entity<RoomType>(entity =>
+            {
+                entity.Property(e => e.PricePerNight).HasColumnType("decimal(18,2)");
             });
         }
     }

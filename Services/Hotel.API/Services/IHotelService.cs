@@ -1,5 +1,3 @@
-using Hotel.API.Repositories;
-
 using Hotel.API.Entities;
 
 namespace Hotel.API.Services
@@ -8,9 +6,10 @@ namespace Hotel.API.Services
     {
         Task<IEnumerable<HotelEntity>> GetAllHotelsAsync();
         Task<HotelEntity?> GetHotelByIdAsync(Guid id);
-        Task<HotelEntity> CreateHotelAsync(HotelEntity hotel);
-        Task UpdateHotelAsync(HotelEntity hotel);
-        Task DeleteHotelAsync(Guid id);
+        Task<IEnumerable<HotelEntity>> GetHotelsByManagerAsync(string managerId);
+        Task<HotelEntity> CreateHotelAsync(HotelEntity hotel, string managerId);
+        Task<bool> UpdateHotelAsync(HotelEntity hotel, string managerId);
+        Task<bool> DeleteHotelAsync(Guid id, string managerId);
         Task<IEnumerable<HotelEntity>> GetHotelsByCityAsync(string city);
     }
 }

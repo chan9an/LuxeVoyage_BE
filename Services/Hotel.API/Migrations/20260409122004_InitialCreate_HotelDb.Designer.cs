@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hotel.API.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    [Migration("20260408055802_InitialCreate_HotelDb")]
+    [Migration("20260409122004_InitialCreate_HotelDb")]
     partial class InitialCreate_HotelDb
     {
         /// <inheritdoc />
@@ -48,6 +48,11 @@ namespace Hotel.API.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<string>("ManagerId")
+                        .IsRequired()
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(150)
@@ -57,7 +62,7 @@ namespace Hotel.API.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Rating")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(3,2)");
 
                     b.Property<int>("ReviewCount")
                         .HasColumnType("int");

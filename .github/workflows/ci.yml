@@ -1,0 +1,129 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+env:
+  DOTNET_VERSION: '10.0.x'
+
+jobs:
+  build:
+    name: Build All Services
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET ${{ env.DOTNET_VERSION }}
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      # Write .env files from GitHub Secrets so DotNetEnv loads them at build time
+      - name: Write Auth.API .env
+        run: |
+          cat > Services/Auth.API/.env << 'EOF'
+          DB_CONNECTION=${{ secrets.AUTH_DB_CONNECTION }}
+          JWT_SECRET=${{ secrets.JWT_SECRET }}
+          JWT_ISSUER=${{ secrets.JWT_ISSUER }}
+          JWT_AUDIENCE=${{ secrets.JWT_AUDIENCE }}
+          JWT_EXPIRY_MINUTES=120
+          GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }}
+          RABBITMQ_HOST=${{ secrets.RABBITMQ_HOST }}
+          RABBITMQ_VHOST=/
+          RABBITMQ_USERNAME=${{ secrets.RABBITMQ_USERNAME }}
+          RABBITMQ_PASSWORD=${{ secrets.RABBITMQ_PASSWORD }}
+          EOF
+
+      - name: Write Hotel.API .env
+        run: |
+          cat > Services/Hotel.API/.env << 'EOF'
+          DB_CONNECTION=${{ secrets.HOTEL_DB_CONNECTION }}
+          JWT_SECRET=${{ secrets.JWT_SECRET }}
+          JWT_ISSUER=${{ secrets.JWT_ISSUER }}
+          JWT_AUDIENCE=${{ secrets.JWT_AUDIENCE }}
+          CLOUDINARY_CLOUD_NAME=${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}
+          RABBITMQ_HOST=${{ secrets.RABBITMQ_HOST }}
+          RABBITMQ_VHOST=/
+          RABBITMQ_USERNAME=${{ secrets.RABBITMQ_USERNAME }}
+          RABBITMQ_PASSWORD=${{ secrets.RABBITMQ_PASSWORD }}
+          EOF
+
+      - name: Write Booking.API .env
+        run: |
+          cat > Services/Booking.API/.env << 'EOF'
+          DB_CONNECTION=${{ secrets.BOOKING_DB_CONNECTION }}
+          RABBITMQ_HOST=${{ secrets.RABBITMQ_HOST }}
+          RABBITMQ_VHOST=/
+          RABBITMQ_USERNAME=${{ secrets.RABBITMQ_USERNAME }}
+          RABBITMQ_PASSWORD=${{ secrets.RABBITMQ_PASSWORD }}
+          EOF
+
+      - name: Write Notification.Worker .env
+        run: |
+          cat > Services/Notification.Worker/.env << 'EOF'
+          RABBITMQ_HOST=${{ secrets.RABBITMQ_HOST }}
+          RABBITMQ_VHOST=/
+          RABBITMQ_USERNAME=${{ secrets.RABBITMQ_USERNAME }}
+          RABBITMQ_PASSWORD=${{ secrets.RABBITMQ_PASSWORD }}
+          SMTP_HOST=${{ secrets.SMTP_HOST }}
+          SMTP_PORT=${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME=${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD=${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM_EMAIL=${{ secrets.SMTP_FROM_EMAIL }}
+          SMTP_FROM_NAME=LuxeVoyage Private Office
+          EOF
+
+      - name: Restore — Shared
+        run: dotnet restore Shared/Shared/Shared.csproj
+
+      - name: Restore — Auth.API
+        run: dotnet restore Services/Auth.API/Auth.API.csproj
+
+      - name: Restore — Hotel.API
+        run: dotnet restore Services/Hotel.API/Hotel.API.csproj
+
+      - name: Restore — Booking.API
+        run: dotnet restore Services/Booking.API/Booking.API.csproj
+
+      - name: Restore — Notification.Worker
+        run: dotnet restore Services/Notification.Worker/Notification.Worker.csproj
+
+      - name: Restore — ApiGateway
+        run: dotnet restore ApigateWay/ApiGateway/ApiGateway.csproj
+
+      - name: Build — Auth.API
+        run: dotnet build Services/Auth.API/Auth.API.csproj --no-restore -c Release
+
+      - name: Build — Hotel.API
+        run: dotnet build Services/Hotel.API/Hotel.API.csproj --no-restore -c Release
+
+      - name: Build — Booking.API
+        run: dotnet build Services/Booking.API/Booking.API.csproj --no-restore -c Release
+
+      - name: Build — Notification.Worker
+        run: dotnet build Services/Notification.Worker/Notification.Worker.csproj --no-restore -c Release
+
+      - name: Build — ApiGateway
+        run: dotnet build ApigateWay/ApiGateway/ApiGateway.csproj --no-restore -c Release
+
+      - name: Run Tests
+        run: |
+          for project in $(find . -name "*.Test.csproj" -type f); do
+            echo "Testing $project..."
+            dotnet test "$project" -c Release --no-restore --verbosity normal
+          done

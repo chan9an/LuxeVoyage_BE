@@ -4,10 +4,7 @@
       "DownstreamPathTemplate": "/api/auth/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5259
-        }
+        { "Host": "localhost", "Port": 5259 }
       ],
       "UpstreamPathTemplate": "/auth/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
@@ -16,28 +13,49 @@
       "DownstreamPathTemplate": "/api/booking/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5118
-        }
+        { "Host": "localhost", "Port": 5118 }
       ],
       "UpstreamPathTemplate": "/booking/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "PATCH" ]
     },
     {
-      "DownstreamPathTemplate": "/api/hotel/{everything}",
+      "DownstreamPathTemplate": "/api/booking",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5117
-        }
+        { "Host": "localhost", "Port": 5118 }
       ],
-      "UpstreamPathTemplate": "/hotel/{everything}",
+      "UpstreamPathTemplate": "/booking",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/hotels",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 5117 }
+      ],
+      "UpstreamPathTemplate": "/hotels",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/hotels/my",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 5117 }
+      ],
+      "UpstreamPathTemplate": "/hotels/my",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/hotels/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 5117 }
+      ],
+      "UpstreamPathTemplate": "/hotels/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5000"
+    "BaseUrl": "https://localhost:7217"
   }
 }

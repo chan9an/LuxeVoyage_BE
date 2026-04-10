@@ -12,13 +12,16 @@ namespace Hotel.API.Entities
         public string Currency { get; set; } = "INR";
         
         public string ImageUrl { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
         
         public PropertyType Type { get; set; }
         
         public decimal Rating { get; set; } 
-        public int ReviewCount { get; set; } 
+        public int ReviewCount { get; set; }
+
+        // Owner — set from JWT on creation, enforced on PUT/DELETE
+        public string ManagerId { get; set; } = string.Empty;
         
-        // EF Core 8 maps List of Enums to JSON arrays out of the box (primitive collections)!
         public List<Amenity> Amenities { get; set; } = new();
 
         public virtual ICollection<RoomType> RoomTypes { get; set; } = new List<RoomType>();
