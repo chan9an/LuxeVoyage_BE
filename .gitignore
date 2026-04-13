@@ -51,3 +51,14 @@ csx/
 /StayEasyNew.slnLaunch.user
 .env
 *.env
+
+# Python - AI.API
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/

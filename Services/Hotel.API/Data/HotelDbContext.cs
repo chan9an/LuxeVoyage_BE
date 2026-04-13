@@ -12,6 +12,10 @@ namespace Hotel.API.Data
         public DbSet<Room> Rooms { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
 
+        // Reviews live in Hotel.API's DB because they're tightly coupled to hotel data.
+        // The AI pipeline writes back to this table via the approved/rejected consumers.
+        public DbSet<ReviewEntity> Reviews { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -33,6 +37,22 @@ namespace Hotel.API.Data
                 .WithMany()
                 .HasForeignKey(r => r.RoomTypeId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            // Reviews cascade-delete with the hotel — if a hotel is removed, its reviews go too.
+            // We also index HotelId + UserId together because the "has this user reviewed this hotel?"
+            // check runs on every review submission and we don't want a full table scan.
+            modelBuilder.Entity<ReviewEntity>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.HasOne(e => e.Hotel)
+                      .WithMany(h => h.Reviews)
+                      .HasForeignKey(e => e.HotelId)
+                      .OnDelete(DeleteBehavior.Cascade);
+                entity.HasIndex(e => new { e.HotelId, e.UserId });
+                entity.Property(e => e.Comment).HasMaxLength(2000);
+                entity.Property(e => e.GuestName).HasMaxLength(200);
+                entity.Property(e => e.ToxicityScore).HasColumnType("real");
+            });
 
 
             modelBuilder.Entity<HotelEntity>(entity =>

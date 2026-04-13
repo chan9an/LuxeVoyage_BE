@@ -1,6 +1,10 @@
 {
+  "_comment": "Ocelot route table. Each route maps an upstream path (what the Angular frontend calls) to a downstream path (the actual microservice endpoint). The gateway runs on https://localhost:7217 and all services run on plain HTTP internally.",
+
   "Routes": [
+
     {
+      "_comment": "Auth service — handles register, login, OTP, password reset, and Google OAuth. All auth traffic goes to Auth.API on port 5259.",
       "DownstreamPathTemplate": "/api/auth/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -9,7 +13,9 @@
       "UpstreamPathTemplate": "/auth/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
+
     {
+      "_comment": "Booking service — handles bookings with path segments (e.g. /booking/my, /booking/{id}/cancel). Must be defined before the base /booking route so Ocelot matches the more specific pattern first.",
       "DownstreamPathTemplate": "/api/booking/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -18,7 +24,9 @@
       "UpstreamPathTemplate": "/booking/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "PATCH" ]
     },
+
     {
+      "_comment": "Booking service — base route for POST /booking (create) and GET /booking (list all). Needs its own entry because /booking with no trailing segment doesn't match the {everything} wildcard above.",
       "DownstreamPathTemplate": "/api/booking",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -27,7 +35,9 @@
       "UpstreamPathTemplate": "/booking",
       "UpstreamHttpMethod": [ "GET", "POST" ]
     },
+
     {
+      "_comment": "Hotel service — base route for GET /hotels (list all) and POST /hotels (create). Same reason as /booking above — needs its own entry for the no-segment case.",
       "DownstreamPathTemplate": "/api/hotels",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -36,7 +46,9 @@
       "UpstreamPathTemplate": "/hotels",
       "UpstreamHttpMethod": [ "GET", "POST" ]
     },
+
     {
+      "_comment": "Hotel service — /hotels/my is a named route that returns only the calling manager's hotels. It must be defined BEFORE the generic /hotels/{everything} wildcard, otherwise Ocelot would match 'my' as the {everything} segment and route it incorrectly.",
       "DownstreamPathTemplate": "/api/hotels/my",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -45,7 +57,9 @@
       "UpstreamPathTemplate": "/hotels/my",
       "UpstreamHttpMethod": [ "GET" ]
     },
+
     {
+      "_comment": "Hotel service — wildcard route for all other hotel paths: /hotels/{id}, /hotels/city/{city}, etc. This must come AFTER the more specific /hotels/my route above.",
       "DownstreamPathTemplate": "/api/hotels/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -53,9 +67,34 @@
       ],
       "UpstreamPathTemplate": "/hotels/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+
+    {
+      "_comment": "Reviews — base route for POST /reviews (submit a review) and the can-review check. Routes to Hotel.API since reviews are stored there alongside hotel data.",
+      "DownstreamPathTemplate": "/api/reviews",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 5117 }
+      ],
+      "UpstreamPathTemplate": "/reviews",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+
+    {
+      "_comment": "Reviews — wildcard for /reviews/hotel/{hotelId}, /reviews/hotel/{hotelId}/can-review, etc.",
+      "DownstreamPathTemplate": "/api/reviews/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 5117 }
+      ],
+      "UpstreamPathTemplate": "/reviews/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     }
+
   ],
+
   "GlobalConfiguration": {
+    "_comment": "BaseUrl is the public-facing URL of this gateway. Ocelot uses this when generating redirect URLs and Location headers.",
     "BaseUrl": "https://localhost:7217"
   }
 }

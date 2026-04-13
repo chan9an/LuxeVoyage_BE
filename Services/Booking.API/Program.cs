@@ -30,10 +30,11 @@ builder.Services.AddMassTransit(x =>
     x.AddConsumer<RoomReservationFailedConsumer>();
     x.UsingRabbitMq((ctx, cfg) =>
     {
-        cfg.Host(rabbit["Host"], rabbit["VirtualHost"], h =>
+        cfg.Host(rabbit["Host"], 5671, rabbit["VirtualHost"], h =>
         {
             h.Username(rabbit["Username"]!);
             h.Password(rabbit["Password"]!);
+            h.UseSsl(ssl => ssl.Protocol = System.Security.Authentication.SslProtocols.Tls12);
         });
         cfg.ConfigureEndpoints(ctx);
     });

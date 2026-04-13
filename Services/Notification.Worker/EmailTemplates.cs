@@ -137,4 +137,54 @@ public static class EmailTemplates
 
         return Wrap(body.ToString());
     }
+
+    // ── Email Verification OTP ────────────────────────────────────────────────
+
+    public static string EmailVerification(string firstName, string otp) =>
+        Wrap(
+            GoldBar(4) +
+            Logo() +
+            Divider() +
+            "<tr><td style=\"padding:44px 48px 28px;\">" +
+            "<p style=\"margin:0 0 10px;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:#d4af37;font-family:'Helvetica Neue',sans-serif;\">Verify Your Account</p>" +
+            $"<h1 style=\"margin:0 0 22px;font-size:34px;font-weight:400;font-style:italic;color:#e2e2e2;line-height:1.2;\">Welcome, {firstName}.</h1>" +
+            "<p style=\"margin:0 0 28px;font-size:15px;line-height:1.85;color:#9a8f78;font-family:'Helvetica Neue',sans-serif;font-weight:300;\">" +
+            "Use the code below to verify your email and activate your <strong style=\"color:#d4af37;\">LuxeVoyage Private Office</strong> account. This code expires in <strong style=\"color:#d4af37;\">10 minutes</strong>." +
+            "</p>" +
+            "<div style=\"background:#1a1a1a;border:1px solid #3a3020;border-radius:4px;padding:28px;text-align:center;margin-bottom:28px;\">" +
+            $"<p style=\"margin:0;font-size:42px;font-weight:700;letter-spacing:.3em;color:#f2ca50;font-family:'Helvetica Neue',sans-serif;\">{otp}</p>" +
+            "<p style=\"margin:8px 0 0;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#5a4f35;font-family:'Helvetica Neue',sans-serif;\">Verification code &middot; valid 10 minutes</p>" +
+            "</div>" +
+            "<p style=\"margin:0;font-size:13px;line-height:1.7;color:#5a4f35;font-family:'Helvetica Neue',sans-serif;\">" +
+            "If you did not create a LuxeVoyage account, please ignore this email." +
+            "</p></td></tr>" +
+            Divider() +
+            Footer("You received this because you registered at luxevoyage.in") +
+            GoldBar(2)
+        );
+
+    // ── Password Reset OTP email ───────────────────────────────────────────────
+
+    public static string PasswordResetOtp(string firstName, string otp) =>
+        Wrap(
+            GoldBar(4) +
+            Logo() +
+            Divider() +
+            "<tr><td style=\"padding:44px 48px 28px;\">" +
+            "<p style=\"margin:0 0 10px;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:#d4af37;font-family:'Helvetica Neue',sans-serif;\">Password Reset</p>" +
+            $"<h1 style=\"margin:0 0 22px;font-size:34px;font-weight:400;font-style:italic;color:#e2e2e2;line-height:1.2;\">Your reset code, {firstName}.</h1>" +
+            "<p style=\"margin:0 0 28px;font-size:15px;line-height:1.85;color:#9a8f78;font-family:'Helvetica Neue',sans-serif;font-weight:300;\">" +
+            "Use the code below to reset your LuxeVoyage password. This code expires in <strong style=\"color:#d4af37;\">10 minutes</strong>." +
+            "</p>" +
+            "<div style=\"background:#1a1a1a;border:1px solid #3a3020;border-radius:4px;padding:28px;text-align:center;margin-bottom:28px;\">" +
+            $"<p style=\"margin:0;font-size:42px;font-weight:700;letter-spacing:.3em;color:#f2ca50;font-family:'Helvetica Neue',sans-serif;\">{otp}</p>" +
+            "<p style=\"margin:8px 0 0;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#5a4f35;font-family:'Helvetica Neue',sans-serif;\">One-time password &middot; valid 10 minutes</p>" +
+            "</div>" +
+            "<p style=\"margin:0;font-size:13px;line-height:1.7;color:#5a4f35;font-family:'Helvetica Neue',sans-serif;\">" +
+            "If you did not request a password reset, please ignore this email. Your account remains secure." +
+            "</p></td></tr>" +
+            Divider() +
+            Footer("You received this because a password reset was requested for your LuxeVoyage account.") +
+            GoldBar(2)
+        );
 }

@@ -7,9 +7,13 @@
     <Project Path="Services/Booking.API/Booking.API.csproj" />
     <Project Path="Services/Hotel.API/Hotel.API.csproj" />
     <Project Path="Services/Notification.Worker/Notification.Worker.csproj" />
-    
   </Folder>
   <Folder Name="/Shared/">
     <Project Path="Shared/Shared/Shared.csproj" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/Auth.API.Tests/Auth.API.Tests.csproj" />
+    <Project Path="Tests/Hotel.API.Tests/Hotel.API.Tests.csproj" />
+    <Project Path="Tests/Booking.API.Tests/Booking.API.Tests.csproj" />
   </Folder>
 </Solution>

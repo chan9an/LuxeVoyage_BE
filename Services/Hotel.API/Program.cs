@@ -1,5 +1,6 @@
 using DotNetEnv;
 using Hotel.API.Data;
+using Hotel.API.Middleware;
 using Hotel.API.Repositories;
 using Hotel.API.Services;
 using MassTransit;
@@ -56,14 +57,36 @@ var rabbit = builder.Configuration.GetSection("RabbitMQ");
 builder.Services.AddMassTransit(x =>
 {
     x.AddConsumer<BookingStartedConsumer>();
+
+    // These two consumers handle the AI pipeline write-back. AI.API publishes the result
+    // and Hotel.API updates the review record accordingly.
+    x.AddConsumer<ReviewApprovedConsumer>();
+    x.AddConsumer<ReviewRejectedConsumer>();
+
     x.UsingRabbitMq((ctx, cfg) =>
     {
-        cfg.Host(rabbit["Host"], rabbit["VirtualHost"], h =>
+        cfg.Host(rabbit["Host"], 5671, rabbit["VirtualHost"], h =>
         {
             h.Username(rabbit["Username"]!);
             h.Password(rabbit["Password"]!);
+            h.UseSsl(ssl => ssl.Protocol = System.Security.Authentication.SslProtocols.Tls12);
         });
+
+        // Let MassTransit auto-configure the BookingStartedConsumer queue
         cfg.ConfigureEndpoints(ctx);
+
+        // Explicit queue names for the review consumers so AI.API knows exactly where to publish
+        cfg.ReceiveEndpoint("luxevoyage.review-approved", e =>
+        {
+            e.Durable = true;
+            e.ConfigureConsumer<ReviewApprovedConsumer>(ctx);
+        });
+
+        cfg.ReceiveEndpoint("luxevoyage.review-rejected", e =>
+        {
+            e.Durable = true;
+            e.ConfigureConsumer<ReviewRejectedConsumer>(ctx);
+        });
     });
 });
 
@@ -71,6 +94,7 @@ builder.Services.AddMassTransit(x =>
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IHotelService, HotelService>();
 builder.Services.AddScoped<ICloudinaryService, CloudinaryService>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
 
 // ── CORS ──────────────────────────────────────────────────────────────────────
 builder.Services.AddCors(options =>
@@ -87,6 +111,9 @@ builder.Services.AddSwaggerGen();
 
 // ── Pipeline ──────────────────────────────────────────────────────────────────
 var app = builder.Build();
+
+// Exception handler goes first — wraps the entire pipeline so nothing slips through
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseSwagger();
 app.UseSwaggerUI();

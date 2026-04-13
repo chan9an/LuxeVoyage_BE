@@ -8,3 +8,4 @@ namespace Auth.API.Application.Interfaces
         string GenerateToken(ApplicationUser user, IList<string> roles);
     }
 }
+   

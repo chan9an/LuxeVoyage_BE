@@ -26,5 +26,9 @@ namespace Hotel.API.Entities
 
         public virtual ICollection<RoomType> RoomTypes { get; set; } = new List<RoomType>();
         public virtual ICollection<Room> Rooms { get; set; } = new List<Room>();
+
+        // Only approved reviews are returned to the frontend — the raw collection here
+        // includes pending and rejected ones too, which is useful for admin/moderation later.
+        public virtual ICollection<ReviewEntity> Reviews { get; set; } = new List<ReviewEntity>();
     }
 }

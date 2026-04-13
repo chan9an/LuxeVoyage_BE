@@ -10,12 +10,25 @@ namespace Hotel.API.Services
         Task DeleteImageAsync(string imageUrl);
     }
 
+    /*
+     * CloudinaryDotNet is the official .NET SDK for Cloudinary, which is the cloud image storage
+     * and CDN service we use for hotel photos. We chose Cloudinary over storing images in the
+     * database or a local file system because it handles image optimisation, CDN delivery, and
+     * transformations (resizing, cropping, format conversion) automatically. The SDK wraps the
+     * Cloudinary REST API and handles authentication, request signing, and response parsing for us.
+     */
     public class CloudinaryService : ICloudinaryService
     {
         private readonly Cloudinary _cloudinary;
 
         public CloudinaryService(IConfiguration config)
         {
+            /*
+             * The Account object holds the three credentials that Cloudinary uses to authenticate
+             * API calls — the cloud name identifies which Cloudinary account we're talking to,
+             * while the API key and secret are used to sign requests. We set Api.Secure = true
+             * to ensure all API calls go over HTTPS rather than plain HTTP.
+             */
             var account = new Account(
                 config["Cloudinary:CloudName"],
                 config["Cloudinary:ApiKey"],
@@ -25,9 +38,14 @@ namespace Hotel.API.Services
             _cloudinary.Api.Secure = true;
         }
 
-        // Upload an image from a remote URL into Cloudinary
         public async Task<string> UploadFromUrlAsync(string imageUrl, string publicId)
         {
+            /*
+             * When FileDescription is given a URL string rather than a file path or stream, Cloudinary
+             * fetches the image from that URL on their servers rather than us uploading the bytes.
+             * This is more efficient for our seed script use case where images come from Unsplash —
+             * we just pass the Unsplash URL and Cloudinary handles the download and storage.
+             */
             var uploadParams = new ImageUploadParams
             {
                 File = new FileDescription(imageUrl),
@@ -40,24 +58,27 @@ namespace Hotel.API.Services
             return result.SecureUrl.ToString();
         }
 
-        // Extract public_id from a Cloudinary URL and delete it
         public async Task DeleteImageAsync(string imageUrl)
         {
             if (string.IsNullOrEmpty(imageUrl)) return;
 
             try
             {
-                // Cloudinary URLs look like:
-                // https://res.cloudinary.com/{cloud}/image/upload/v123456/luxevoyage/hotels/abc.jpg
-                // public_id = everything after /upload/v{version}/ without extension
+                /*
+                 * Cloudinary's delete API requires the image's public_id, not the full URL. The public_id
+                 * is the path within Cloudinary's storage system, without the domain, version segment,
+                 * or file extension. For example, a URL like:
+                 * https://res.cloudinary.com/mycloud/image/upload/v1234567/luxevoyage/hotels/abc.jpg
+                 * has a public_id of "luxevoyage/hotels/abc".
+                 * We parse this out by finding the "upload" segment in the URL path and taking everything
+                 * after the version number that follows it.
+                 */
                 var uri = new Uri(imageUrl);
                 var segments = uri.AbsolutePath.Split('/');
 
-                // Find "upload" segment index
                 int uploadIdx = Array.IndexOf(segments, "upload");
                 if (uploadIdx < 0) return;
 
-                // Skip "upload" and the version segment (v12345), join the rest, strip extension
                 var publicIdWithExt = string.Join("/", segments.Skip(uploadIdx + 2));
                 var publicId = Path.GetFileNameWithoutExtension(publicIdWithExt);
                 var folder = Path.GetDirectoryName(publicIdWithExt)?.Replace("\\", "/");
@@ -68,7 +89,6 @@ namespace Hotel.API.Services
             }
             catch (Exception ex)
             {
-                // Log but don't throw — DB record should still be deleted
                 Console.WriteLine($"[Cloudinary] Failed to delete image: {ex.Message}");
             }
         }

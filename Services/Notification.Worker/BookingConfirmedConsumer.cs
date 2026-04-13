@@ -6,6 +6,14 @@ using Shared.Events;
 
 namespace Notification.Worker;
 
+/*
+ * This consumer handles IBookingStartedEvent, which is published by Booking.API immediately after
+ * a booking record is saved to the database. The event carries all the display information needed
+ * to build the confirmation email — hotel name, room name, dates, price, guest count — as denormalized
+ * fields in the event payload itself. This is an important architectural decision: by embedding the
+ * display data in the event, the Notification.Worker can send the email without making any HTTP calls
+ * back to Hotel.API. This makes the notification flow resilient to Hotel.API being temporarily down.
+ */
 public class BookingConfirmedConsumer : IConsumer<IBookingStartedEvent>
 {
     private readonly IConfiguration _config;
@@ -21,14 +29,15 @@ public class BookingConfirmedConsumer : IConsumer<IBookingStartedEvent>
     {
         var evt = context.Message;
 
+        // GuestEmail is required to send the confirmation. If it's missing, the booking was likely
+        // created without an authenticated user context, which shouldn't happen in normal flow.
         if (string.IsNullOrEmpty(evt.GuestEmail))
         {
             _logger.LogWarning("[Notification] Booking {BookingId} has no guest email — skipping", evt.BookingId);
             return;
         }
 
-        _logger.LogInformation("[Notification] Sending booking confirmation to {Email} for booking {BookingId}",
-            evt.GuestEmail, evt.BookingId);
+        _logger.LogInformation("[Notification] Sending booking confirmation to {Email} for booking {BookingId}", evt.GuestEmail, evt.BookingId);
 
         try
         {

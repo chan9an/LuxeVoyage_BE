@@ -127,3 +127,74 @@ jobs:
             echo "Testing $project..."
             dotnet test "$project" -c Release --no-restore --verbosity normal
           done
+
+  ai-api:
+    name: AI.API (Python)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ runner.os }}-${{ hashFiles('Services/Ai.API/requirements.txt') }}
+          restore-keys: pip-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: pip install -r Services/Ai.API/requirements.txt
+        working-directory: .
+
+      - name: Write AI.API .env
+        run: |
+          cat > Services/Ai.API/.env << 'EOF'
+          RABBITMQ_HOST=${{ secrets.RABBITMQ_HOST }}
+          RABBITMQ_VHOST=${{ secrets.RABBITMQ_VHOST }}
+          RABBITMQ_USERNAME=${{ secrets.RABBITMQ_USERNAME }}
+          RABBITMQ_PASSWORD=${{ secrets.RABBITMQ_PASSWORD }}
+          TOXICITY_THRESHOLD=0.5
+          EOF
+
+      - name: Lint with flake8
+        run: |
+          pip install flake8
+          # Fail on syntax errors or undefined names, ignore line length and style warnings
+          flake8 Services/Ai.API/app.py --count --select=E9,F63,F7,F82 --show-source --statistics
+
+      - name: Verify model artifacts exist
+        run: |
+          test -f Services/Ai.API/tfidf_vectorizer.pkl && echo "vectorizer OK" || exit 1
+          test -f Services/Ai.API/toxic_comment_model.h5 && echo "model OK" || exit 1
+
+      - name: Smoke test - import and load model
+        run: |
+          python - << 'EOF'
+          import sys, os
+          sys.path.insert(0, "Services/Ai.API")
+          os.chdir("Services/Ai.API")
+          import pickle, tensorflow as tf
+          with open("tfidf_vectorizer.pkl", "rb") as f:
+              vec = pickle.load(f)
+          model = tf.keras.models.load_model("toxic_comment_model.h5")
+          print("Model and vectorizer loaded successfully")
+
+          # Quick prediction sanity check
+          import re
+          text = "this hotel was absolutely wonderful"
+          cleaned = text.lower()
+          cleaned = re.sub(r"[^a-z\s]", "", cleaned)
+          features = vec.transform([cleaned])
+          if hasattr(features, "toarray"):
+              features = features.toarray()
+          prob = model.predict(features, verbose=0).flatten()[0]
+          print(f"Sanity check prediction: {prob:.4f} (should be low/not toxic)")
+          assert prob < 0.5, f"Expected non-toxic but got {prob}"
+          print("All checks passed")
+          EOF
