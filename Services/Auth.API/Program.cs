@@ -29,8 +29,6 @@ builder.Configuration["JwtSettings:Secret"]                   = Environment.GetE
 builder.Configuration["JwtSettings:Issuer"]                   = Environment.GetEnvironmentVariable("JWT_ISSUER")              ?? builder.Configuration["JwtSettings:Issuer"];
 builder.Configuration["JwtSettings:Audience"]                 = Environment.GetEnvironmentVariable("JWT_AUDIENCE")            ?? builder.Configuration["JwtSettings:Audience"];
 builder.Configuration["JwtSettings:ExpiryMinutes"]            = Environment.GetEnvironmentVariable("JWT_EXPIRY_MINUTES")      ?? builder.Configuration["JwtSettings:ExpiryMinutes"];
-builder.Configuration["Authentication:Google:ClientId"]       = Environment.GetEnvironmentVariable("GOOGLE_CLIENT_ID")        ?? builder.Configuration["Authentication:Google:ClientId"];
-builder.Configuration["Authentication:Google:ClientSecret"]   = Environment.GetEnvironmentVariable("GOOGLE_CLIENT_SECRET")    ?? builder.Configuration["Authentication:Google:ClientSecret"];
 builder.Configuration["RabbitMQ:Host"]                        = Environment.GetEnvironmentVariable("RABBITMQ_HOST")           ?? builder.Configuration["RabbitMQ:Host"];
 builder.Configuration["RabbitMQ:VirtualHost"]                 = Environment.GetEnvironmentVariable("RABBITMQ_VHOST")          ?? builder.Configuration["RabbitMQ:VirtualHost"];
 builder.Configuration["RabbitMQ:Username"]                    = Environment.GetEnvironmentVariable("RABBITMQ_USERNAME")       ?? builder.Configuration["RabbitMQ:Username"];
@@ -53,11 +51,9 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 
 /*
- * We configure JWT as the default authentication scheme and then layer Google OAuth on top as an
- * additional external provider. The JwtBearer middleware will intercept every incoming request,
- * look for an Authorization: Bearer header, and validate the token against the parameters we define
- * here. If any of those validations fail — wrong issuer, expired token, bad signature — the request
- * gets a 401 before it even reaches a controller.
+ * JWT is the only authentication scheme we need. The JwtBearer middleware intercepts every
+ * incoming request, validates the Authorization: Bearer header, and rejects anything that
+ * doesn't pass — wrong issuer, expired token, bad signature all get a 401.
  */
 builder.Services.AddAuthentication(options =>
 {
@@ -77,13 +73,6 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey         = new SymmetricSecurityKey(
             System.Text.Encoding.UTF8.GetBytes(jwtSettings["Secret"]!))
     };
-})
-.AddGoogle(options =>
-{
-    // We throw immediately at startup if these are missing rather than letting the app start
-    // and fail mysteriously the first time someone tries to log in with Google.
-    options.ClientId     = builder.Configuration["Authentication:Google:ClientId"]     ?? throw new InvalidOperationException("Google ClientId missing");
-    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"] ?? throw new InvalidOperationException("Google ClientSecret missing");
 });
 
 builder.Services.AddControllers();

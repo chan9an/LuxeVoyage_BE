@@ -2,8 +2,6 @@ using System.Security.Claims;
 using Auth.API.Application.Interfaces;
 using Auth.API.Domain.Entities;
 using MassTransit;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Events;
@@ -20,27 +18,20 @@ namespace Auth.API.Controllers
          * claims, assigning roles, and generating tokens. We never touch password hashes directly;
          * UserManager abstracts all of that away behind a clean async API.
          *
-         * SignInManager is a higher-level service that builds on top of UserManager. We only need
-         * it here for the Google OAuth flow, specifically to configure the external authentication
-         * properties and retrieve the external login info after Google redirects back to us.
-         *
          * IPublishEndpoint comes from MassTransit and is how we fire events onto the message bus.
          * It's completely fire-and-forget — we publish an event and return a response to the user
          * immediately, without waiting for the Notification.Worker to process it.
          */
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IJwtTokenGenerator _jwtTokenGenerator;
         private readonly IPublishEndpoint _publishEndpoint;
 
         public AuthController(
             UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager,
             IJwtTokenGenerator jwtTokenGenerator,
             IPublishEndpoint publishEndpoint)
         {
             _userManager = userManager;
-            _signInManager = signInManager;
             _jwtTokenGenerator = jwtTokenGenerator;
             _publishEndpoint = publishEndpoint;
         }
@@ -227,72 +218,6 @@ namespace Auth.API.Controllers
             if (!result.Succeeded) return BadRequest(result.Errors);
 
             return Ok(new { Message = "Password reset successfully." });
-        }
-
-        [HttpGet("external-login")]
-        public IActionResult ExternalLogin()
-        {
-            /*
-             * ConfigureExternalAuthenticationProperties sets up the OAuth state parameter and the
-             * redirect URI that Google will call after the user consents. The Challenge call then
-             * redirects the user's browser to Google's OAuth consent screen. The whole flow is
-             * stateless from our side — Google handles the user interaction and then calls us back.
-             */
-            var properties = _signInManager.ConfigureExternalAuthenticationProperties(
-                GoogleDefaults.AuthenticationScheme, Url.Action(nameof(ExternalLoginCallback)));
-            return Challenge(properties, GoogleDefaults.AuthenticationScheme);
-        }
-
-        [HttpGet("external-callback")]
-        public async Task<IActionResult> ExternalLoginCallback()
-        {
-            var info = await _signInManager.GetExternalLoginInfoAsync();
-            if (info == null) return BadRequest("Error loading external login information.");
-
-            var email = info.Principal.FindFirstValue(ClaimTypes.Email);
-            if (string.IsNullOrEmpty(email)) return BadRequest("Google did not provide an email address.");
-
-            var user = await _userManager.FindByEmailAsync(email);
-            if (user == null)
-            {
-                /*
-                 * If this is the first time this Google account has logged in, we auto-create a local
-                 * user account for them. We set EmailConfirmed to true immediately because Google has
-                 * already verified the email address — there's no need to put them through our OTP flow.
-                 * AddLoginAsync creates the link between the local user record and the Google external
-                 * login, so future logins with the same Google account will find this user automatically.
-                 */
-                user = new ApplicationUser
-                {
-                    UserName       = email,
-                    Email          = email,
-                    FirstName      = info.Principal.FindFirstValue(ClaimTypes.GivenName) ?? string.Empty,
-                    LastName       = info.Principal.FindFirstValue(ClaimTypes.Surname)   ?? string.Empty,
-                    EmailConfirmed = true
-                };
-
-                var createResult = await _userManager.CreateAsync(user);
-                if (createResult.Succeeded)
-                {
-                    await _userManager.AddToRoleAsync(user, "Customer");
-                    await _userManager.AddLoginAsync(user, info);
-                    await _publishEndpoint.Publish<IUserRegisteredEvent>(new
-                    {
-                        UserId    = user.Id,
-                        Email     = user.Email ?? string.Empty,
-                        FirstName = user.FirstName ?? string.Empty,
-                        LastName  = user.LastName ?? string.Empty
-                    });
-                }
-                else return BadRequest(createResult.Errors);
-            }
-
-            var roles = await _userManager.GetRolesAsync(user);
-            var token = _jwtTokenGenerator.GenerateToken(user, roles);
-            var primaryRole = roles.FirstOrDefault() ?? "Customer";
-            // We redirect to the Angular app with the token in the query string. The frontend
-            // intercepts this on the /login route and saves the token to localStorage.
-            return Redirect($"http://localhost:4200/login?token={token}&role={primaryRole}");
         }
 
         /*
