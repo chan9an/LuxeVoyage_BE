@@ -62,3 +62,7 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+
+# Model artifacts - too large for Git, store locally or in Azure Blob Storage
+*.pkl
+*.h5
